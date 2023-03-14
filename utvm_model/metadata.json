@@ -1,0 +1,131 @@
+{
+  "modules": {
+    "default": {
+      "executors": [
+        "aot"
+      ],
+      "export_datetime": "2023-03-14 16:44:13Z",
+      "external_dependencies": [
+        {
+          "short_name": "tvm_standalone_crt",
+          "url": "./runtime",
+          "url_type": "mlf_path",
+          "version_spec": "0.11.dev0"
+        }
+      ],
+      "memory": {
+        "functions": {
+          "main": [
+            {
+              "constants_size_bytes": 48952,
+              "device": 1,
+              "inputs": {
+                "serving_default_input:0": {
+                  "dtype": "float32",
+                  "size": 3136
+                }
+              },
+              "io_size_bytes": 11872,
+              "outputs": {
+                "PartitionedCall_0": {
+                  "dtype": "float32",
+                  "size": 40
+                }
+              },
+              "workspace_size_bytes": 5336
+            }
+          ],
+          "operator_functions": [
+            {
+              "function_name": "tvmgen_default_fused_nn_max_pool2d",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_dense_subtract_add_fixed_point_multiply_add_clip_cast",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_dense_subtract_add_fixed_point_multiply_add_clip_cast_1",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_divide_round_add_clip_cast_reshape_cast",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_conv2d_subtract_add_fixed_point_multiply_per_axis_add_clip_cast_1",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_transpose_reshape",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_conv2d_subtract_add_fixed_point_multiply_per_axis_add_clip_cast",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_max_pool2d_cast",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            },
+            {
+              "function_name": "tvmgen_default_fused_nn_dense_subtract_add_fixed_point_multiply_add_clip_subtract_cast_multiply",
+              "workspace": [
+                {
+                  "device": 1,
+                  "workspace_size_bytes": 0
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "model_name": "default",
+      "style": "full-model",
+      "target": [
+        "c -keys=arm_cpu,cpu -device=arm_cpu -march=armv7e-m -mcpu=cortex-m7 -model=stm32f746xx"
+      ]
+    }
+  },
+  "version": 7
+}
